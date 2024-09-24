@@ -1,3 +1,5 @@
+
+
 class Human:
 	def __init__(self, name: str, age: int):
 		self._name: str = Human._validate_name(name)
@@ -20,10 +22,21 @@ class Human:
 
 
 class Builder(Human):
-
+	def __init__(self, name: str, age: int, work_type):
+		super().__init__(name, age)
+		self.__work_type: str = work_type
 
 
 class Pilot(Human):
+	def __init__(self, name: str, age: int, health: int):
+		super().__init__(name, age)
+		self.__health: int = health
+
+	def is_health(self):
+		if self.__health < 10:
+			return False
+		return None
 
 
 class Sailor(Human):
+	pass
